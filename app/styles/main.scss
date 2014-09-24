@@ -19,6 +19,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  //background: url(../images/chain.png);
 }
 
 body {
@@ -230,6 +231,128 @@ main {
   min-height: 100%;
 }
 
+.modal-view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+  opacity: 0;
+
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+
+  -webkit-transition:
+  -webkit-transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+  opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+  transition:
+  transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+  opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+
+  will-change: transform, opacity;
+  &.visible {
+    pointer-events: auto;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+
+    -webkit-transition:
+    -webkit-transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+    opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+    transition:
+    transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+    opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  }
+  &:after {
+    position: fixed;
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: block;
+    content: '';
+  }
+}
+
+.modal-view-details {
+    background: #FFF;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding: 25px;
+    max-width: 50%;
+    min-width: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.close-modal {
+    background: #666;
+    margin: -25px -25px 25px -25px;
+    border: 0;
+    display: block;
+    line-height: 16px;
+    padding: 16px;
+    float: none;
+    cursor: pointer;
+}
+
+a.close-modal, a.close-modal:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+input[type="text"],input[type="email"],input[type="password"] {
+    padding: .5em;
+    margin-bottom: .5em;
+    border: 1px solid #ccc;
+}
+
+input {
+    font-weight: normal;
+    outline: none;
+    &.ng-dirty.ng-invalid {
+        border-color: red;
+        -webkit-box-shadow: 0px 0px 2px red;
+                box-shadow: 0px 0px 2px red;
+    }
+    &.ng-dirty.ng-valid {
+        border-color: green;
+        -webkit-box-shadow: 0px 0px 2px green;
+                box-shadow: 0px 0px 2px green;
+    }
+}
+
+.fright {
+  float: right;
+}
+
+.fleft {
+  float: leftt;
+}
+
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
   .app-bar {
@@ -304,6 +427,7 @@ main {
 
   .navdrawer-container ul li {
     border: none;
+    cursor: pointer;
   }
 
   main {

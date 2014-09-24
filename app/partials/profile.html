@@ -1,0 +1,16 @@
+<div ng-if='UserHomeData.username'>
+    <h1>Hi {{UserHomeData.username}}</h1>
+    <h2>Goal</h2>
+    <h3>{{goals[0].summary}}</h3>
+    <p>Started {{goals[0].chains[0].start | date:'fullDate'}}</p>
+    <p>Record: {{goals[0].record}} day
+        <span ng-if='goals[0].record > 1'>s</span>
+    </p>
+    <chain-link data="goals[0].chains"></chain-link>
+    <div class="clear">
+        <button ng-click="breakChain()" class="button button--primary g-wide--3 centered" ng-if="signIn()">Break the chain</button>
+    </div>
+</div>
+<div ng-if='!UserHomeData.username'>
+    <h1>User does not exist</h1>
+</div>

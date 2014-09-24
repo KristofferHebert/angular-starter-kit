@@ -1,0 +1,18 @@
+{
+    "users": [{
+        "name": "kristoffer",
+        "email": "kris@hirekris.com",
+        "password": "32nyfd33",
+        "chains": [{
+            "start": "Sat Sep 13 2014 23:55:18 GMT-0700 (PDT)",
+            "goal": {
+                "summary": "Workout 3 days a week."
+            },
+            "breaks": [{
+                "date": "Sat Sep 22 2014 23:55:18 GMT-0700 (PDT)",
+                "reason": "Pulled my backout, so I took a break"
+            }],
+            "record": 200
+        }]
+    }]
+}
